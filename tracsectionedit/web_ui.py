@@ -98,7 +98,7 @@ class WikiSectionEditModule(Component):
 
         # Split page text into lists of pre, section and post text
         for i, line in enumerate(page_list):
-            if is_code_block == False and re.match(r'^\s*{{{\s*$', line):
+            if is_code_block == False and re.match(r'^\s*{{{(#!.+)?\s*$', line):
                 is_code_block = True
             elif is_code_block == True and re.match(r'^\s*}}}\s*$', line):
                 is_code_block = False
